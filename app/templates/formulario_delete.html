@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>
+  Eliminar Formulario
+</h3>
+<form method='POST'>
+  {% csrf_token %}
+  <h3>Desea eliminar el formulario id - {{ formulario.id }}</h3>
+  <button class="btn btn-danger" type='submit'>Eliminar</button>
+  <a class="btn btn-default" href="{% url 'index' %}">Cancelar</a>
+</form>
+
+{% endblock %}

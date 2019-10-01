@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>
+  Formularios
+</h3>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Exigeno</th>
+      <th scope="col">Hydrogeno</th>
+      <th scope="col">Nitrogeno</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for formulario in formularios %}
+    <tr>
+      <th scope="row">{{ formulario.id }}</th>
+      <td>{{ formulario.dato1 }}</td>
+      <td>{{ formulario.dato2 }}</td>
+      <td>{{ formulario.dato3 }}</td>
+      <td><a class='btn btn-primary' href='{% url 'formulario_edit' formulario.id %}'>Editar</a>
+          <a class='btn btn-danger' href='{% url 'formulario_delete' formulario.id %}'>Eliminar</a></td>
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
